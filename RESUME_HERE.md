@@ -27,11 +27,10 @@ All of `docs/DISCOVERY.md` Batch 1. The most blocking items: A2 (identity), A4 (
 direction), C1 (pace), D4 (first character), E1 (rig), I2 (integration method).
 
 ## Blockers and environment notes
-- **Push blocked (2026-10-27):** `git push` and the GitHub connector both return 403. Claude
-  has read access to `cgspiral/img` but no write access. The commit exists only in the cloud
-  container, and a copy of the docs was sent to the owner as a zip. Fix: reconnect GitHub at
-  https://claude.ai/connect-github and install the Claude GitHub App on the repo. Then push
-  the branch.
+- **GitHub access:** after the owner reinstalled the Claude GitHub App, `git push` to
+  `CGSpiral/img` works (2026-10-27). Creating a *new* repository through the connector still
+  returns 403, so the project stays in `CGSpiral/img` unless the owner creates a repo and
+  attaches it.
 - This cloud environment's network policy blocks `create.roblox.com` (Roblox docs). The owner
   can allow it under Network access in the environment settings.
 - The crates.io registry is reachable. StyLua, Selene, Lune and Rojo all install and work
